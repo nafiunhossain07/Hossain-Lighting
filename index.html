@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hossain Lighting — Luxury Lighting Since 1991</title>
+<meta name="description" content="Bangladesh's premier luxury lighting brand. Chandeliers, pendant lights, wall lights, ceiling lights and more. Since 1991.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+/* ── NEW PALETTE: Navy Blue + Deep Red + Black ── */
+--primary:#1B3A6B;        /* deep navy blue */
+--primary-light:#2A5298;  /* brighter navy */
+--primary-bright:#3D6FCC; /* accent blue */
+--primary-pale:#D6E4FF;   /* pale blue tint */
+--accent:#C0272D;         /* deep red */
+--accent-light:#E03438;   /* brighter red */
+--accent-dark:#8B1A1D;    /* dark crimson */
+--accent-pale:#FFE5E5;    /* pale red tint */
+/* ── BLACKS & DARKS ── */
+--black:#050608;
+--dark:#0A0D14;           /* near-black navy base */
+--dark-mid:#111827;       /* dark navy-charcoal */
+--dark-soft:#1C2333;      /* softer dark */
+--dark-card:#13192A;      /* card bg */
+/* ── LIGHTS ── */
+--cream:#F5F7FA;
+--white:#FFFFFF;
+/* ── TEXT ── */
+--text-muted:#8B9AB5;
+--text-medium:#C5CFE0;
+/* ── GLOW / SHADOW ── */
+--shadow-blue:0 4px 30px rgba(27,58,107,0.35);
+--shadow-red:0 4px 30px rgba(192,39,45,0.25);
+--shadow-soft:0 8px 40px rgba(0,0,0,0.25);
+--shadow-strong:0 20px 60px rgba(0,0,0,0.4);
+/* ── FONTS ── */
+--font-display:'Cormorant Garamond',Georgia,serif;
+--font-body:'Jost',system-ui,sans-serif;
+--nav-h:80px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:var(--dark);color:var(--cream);overflow-x:hidden;line-height:1.6}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--dark)}
+::-webkit-scrollbar-thumb{background:linear-gradient(to bottom,var(--primary-bright),var(--accent));border-radius:2px}
+
+/* ─── SELECTION ─── */
+::selection{background:var(--accent);color:var(--white)}
+
+/* ─── NAV ─── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 5%;transition:all 0.4s ease}
+#nav.scrolled{background:rgba(5,6,8,0.93);backdrop-filter:blur(20px);border-bottom:1px solid rgba(27,58,107,0.4)}
+.nav-logo{font-family:var(--font-display);font-size:1.6rem;font-weight:400;letter-spacing:0.08em;color:var(--primary-bright);text-decoration:none;display:flex;flex-direction:column}
+.nav-logo .logo-top{display:flex;align-items:center;gap:0.3em}
+.nav-logo .logo-h{color:var(--primary-bright)}
+.nav-logo .logo-l{color:var(--accent-light)}
+.nav-logo span{display:block;font-size:0.62rem;font-family:var(--font-body);font-weight:200;letter-spacing:0.3em;color:var(--text-muted);text-transform:uppercase;margin-top:-2px}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+.nav-links a{color:var(--text-medium);text-decoration:none;font-size:0.8rem;font-weight:300;letter-spacing:0.15em;text-transform:uppercase;transition:color 0.3s}
+.nav-links a:hover{color:var(--primary-bright)}
+.nav-actions{display:flex;align-items:center;gap:1.2rem}
+.nav-icon{background:none;border:none;cursor:pointer;color:var(--text-medium);font-size:1.2rem;transition:all 0.3s;padding:4px}
+.nav-icon:hover{color:var(--accent-light)}
+.nav-cart-badge{position:relative}
+.cart-count{position:absolute;top:-6px;right:-6px;background:var(--accent);color:var(--white);width:16px;height:16px;border-radius:50%;font-size:0.6rem;font-weight:600;display:flex;align-items:center;justify-content:center}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:22px;height:1px;background:var(--cream);transition:all 0.3s}
+@media(max-width:900px){.nav-links,.nav-actions .nav-icon:not(:last-child){display:none}.hamburger{display:flex}}
+
+/* ─── HERO ─── */
+#hero{height:100vh;min-height:600px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#050608 0%,#0A0D14 40%,#070A12 70%,#0D0508 100%)}
+/* Diagonal split: blue tint left, red tint right */
+.hero-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(27,58,107,0.18) 0%,transparent 55%,rgba(192,39,45,0.14) 100%)}
+.hero-glow-blue{position:absolute;top:40%;left:20%;width:500px;height:500px;background:radial-gradient(ellipse,rgba(42,82,152,0.18) 0%,transparent 70%);pointer-events:none}
+.hero-glow-red{position:absolute;top:45%;right:15%;width:400px;height:400px;background:radial-gradient(ellipse,rgba(192,39,45,0.14) 0%,transparent 70%);pointer-events:none}
+.hero-chandelier{position:absolute;top:0;left:50%;transform:translateX(-50%);width:2px;height:45%;background:linear-gradient(to bottom,transparent,rgba(61,111,204,0.4));pointer-events:none}
+.hero-chandelier::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120px;height:120px;background:radial-gradient(ellipse,rgba(61,111,204,0.2) 0%,transparent 70%);border-radius:50%}
+.hero-lines{position:absolute;inset:0;overflow:hidden;pointer-events:none;opacity:0.07}
+.hero-lines::before,.hero-lines::after{content:'';position:absolute;border:1px solid var(--primary-bright)}
+.hero-lines::before{top:8%;left:4%;right:4%;bottom:8%}
+.hero-lines::after{top:11%;left:7%;right:7%;bottom:11%}
+/* Corner accent marks */
+.hero-corner{position:absolute;pointer-events:none}
+.hero-corner.tl{top:8%;left:4%;width:30px;height:30px;border-top:2px solid var(--accent);border-left:2px solid var(--accent)}
+.hero-corner.tr{top:8%;right:4%;width:30px;height:30px;border-top:2px solid var(--primary-bright);border-right:2px solid var(--primary-bright)}
+.hero-corner.bl{bottom:10%;left:4%;width:30px;height:30px;border-bottom:2px solid var(--primary-bright);border-left:2px solid var(--primary-bright)}
+.hero-corner.br{bottom:10%;right:4%;width:30px;height:30px;border-bottom:2px solid var(--accent);border-right:2px solid var(--accent)}
+.hero-content{position:relative;text-align:center;z-index:2;padding:0 1rem;max-width:860px}
+.hero-tag{font-size:0.65rem;font-weight:300;letter-spacing:0.5em;text-transform:uppercase;color:var(--primary-bright);margin-bottom:1.5rem;opacity:0;animation:fadeUp 1s 0.3s forwards}
+.hero-title{font-family:var(--font-display);font-size:clamp(3rem,7vw,6rem);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:1rem;opacity:0;animation:fadeUp 1s 0.5s forwards}
+.hero-title .t-blue{color:var(--primary-bright)}
+.hero-title .t-red{color:var(--accent-light);font-style:italic}
+.hero-slogan{font-family:var(--font-display);font-size:clamp(0.95rem,2vw,1.2rem);font-weight:300;font-style:italic;color:var(--text-medium);letter-spacing:0.05em;margin-bottom:2.5rem;opacity:0;animation:fadeUp 1s 0.7s forwards}
+.hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 1s 0.9s forwards}
+.btn-primary{background:var(--primary);color:var(--white);padding:0.85rem 2.2rem;font-family:var(--font-body);font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;border:none;cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-block;border:1px solid var(--primary-bright)}
+.btn-primary:hover{background:var(--primary-bright);transform:translateY(-2px);box-shadow:var(--shadow-blue)}
+.btn-red{background:var(--accent);color:var(--white);padding:0.85rem 2.2rem;font-family:var(--font-body);font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;border:1px solid var(--accent-light);cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-block}
+.btn-red:hover{background:var(--accent-light);transform:translateY(-2px);box-shadow:var(--shadow-red)}
+.btn-outline{background:transparent;color:var(--cream);padding:0.85rem 2.2rem;font-family:var(--font-body);font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;border:1px solid rgba(61,111,204,0.4);cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-block}
+.btn-outline:hover{border-color:var(--primary-bright);color:var(--primary-bright);transform:translateY(-2px)}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;z-index:2}
+.hero-scroll span{font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--primary-bright);opacity:0.7}
+.hero-scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--primary-bright),transparent);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{transform:scaleY(1);opacity:0.7}50%{transform:scaleY(0.6);opacity:0.3}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* ─── SECTION COMMON ─── */
+section{padding:6rem 5%}
+.section-tag{font-size:0.6rem;font-weight:300;letter-spacing:0.5em;text-transform:uppercase;color:var(--primary-bright);margin-bottom:0.8rem}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.1;color:var(--cream)}
+.section-title .t-red{font-style:italic;color:var(--accent-light)}
+.section-title .t-blue{color:var(--primary-bright)}
+.section-sub{color:var(--text-muted);font-weight:300;font-size:0.9rem;margin-top:0.8rem;max-width:500px}
+.section-head{margin-bottom:3.5rem}
+.section-head.center{text-align:center}
+.section-head.center .section-sub{margin:0.8rem auto 0}
+.divider{width:60px;height:2px;background:linear-gradient(to right,var(--primary-bright),var(--accent));margin-top:1.2rem;opacity:0.8}
+.divider.center{margin:1.2rem auto 0}
+
+/* ─── HERITAGE BANNER ─── */
+#heritage{padding:2.5rem 5%;background:rgba(10,13,20,0.95);border-top:1px solid rgba(27,58,107,0.4);border-bottom:1px solid rgba(192,39,45,0.3)}
+.heritage-inner{display:flex;align-items:center;justify-content:center;gap:4rem;flex-wrap:wrap;text-align:center}
+.heritage-item h3{font-family:var(--font-display);font-size:2rem;font-weight:300;background:linear-gradient(135deg,var(--primary-bright),var(--accent-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.heritage-item p{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-top:4px;font-weight:300}
+.heritage-sep{width:1px;height:40px;background:linear-gradient(to bottom,rgba(27,58,107,0.5),rgba(192,39,45,0.4))}
+@media(max-width:600px){.heritage-sep{display:none}}
+
+/* ─── CATEGORIES ─── */
+#categories{background:var(--dark)}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+@media(max-width:700px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.cat-grid{grid-template-columns:1fr}}
+.cat-card{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:1/1.1}
+.cat-card:first-child{grid-column:span 2;aspect-ratio:auto;min-height:300px}
+@media(max-width:700px){.cat-card:first-child{grid-column:span 1}}
+.cat-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94)}
+.cat-card:hover .cat-bg{transform:scale(1.06)}
+.cat-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,6,8,0.85) 0%,rgba(5,6,8,0.1) 60%,transparent 100%);transition:opacity 0.4s}
+.cat-card:hover .cat-overlay{opacity:0.9}
+/* Hover tint — alternating blue / red */
+.cat-card:nth-child(odd)::after{content:'';position:absolute;inset:0;background:rgba(27,58,107,0);transition:background 0.4s;pointer-events:none}
+.cat-card:nth-child(even)::after{content:'';position:absolute;inset:0;background:rgba(192,39,45,0);transition:background 0.4s;pointer-events:none}
+.cat-card:nth-child(odd):hover::after{background:rgba(27,58,107,0.1)}
+.cat-card:nth-child(even):hover::after{background:rgba(192,39,45,0.08)}
+.cat-content{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;z-index:2}
+.cat-name{font-family:var(--font-display);font-size:1.4rem;font-weight:400;color:var(--white)}
+.cat-count{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary-pale);margin-top:4px;font-weight:300}
+.cat-arrow{position:absolute;top:1rem;right:1rem;width:36px;height:36px;border:1px solid rgba(61,111,204,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(8px);transition:all 0.4s;color:var(--primary-bright);font-size:1rem;z-index:2}
+.cat-card:hover .cat-arrow{opacity:1;transform:translateY(0)}
+
+/* ─── FLASH DEALS ─── */
+#deals{background:var(--dark-mid)}
+.countdown{display:flex;gap:1rem;margin-bottom:3rem;align-items:center;flex-wrap:wrap}
+.countdown-label{font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent-light);font-weight:300;margin-right:0.5rem}
+.count-box{text-align:center;min-width:56px}
+.count-num{font-family:var(--font-display);font-size:2.2rem;font-weight:300;color:var(--cream);line-height:1;display:block}
+.count-unit{font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);font-weight:300}
+.count-sep{font-family:var(--font-display);font-size:1.5rem;color:var(--accent-light);opacity:0.6;margin-bottom:0.5rem}
+.deals-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem}
+
+/* ─── PRODUCT CARD ─── */
+.product-card{background:var(--dark-card);border:1px solid rgba(27,58,107,0.2);transition:all 0.4s;cursor:pointer;position:relative;overflow:hidden}
+.product-card:hover{border-color:rgba(61,111,204,0.5);transform:translateY(-4px);box-shadow:0 8px 40px rgba(27,58,107,0.25),0 2px 10px rgba(192,39,45,0.1)}
+.product-img{position:relative;overflow:hidden;aspect-ratio:4/3;background:#060810}
+.product-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.product-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94)}
+.product-card:hover .product-img img{transform:scale(1.05)}
+.product-badge{position:absolute;top:1rem;left:1rem;background:var(--accent);color:var(--white);padding:3px 10px;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;z-index:1}
+.product-wish{position:absolute;top:1rem;right:1rem;width:32px;height:32px;background:rgba(5,6,8,0.7);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--cream);font-size:1rem;transition:all 0.3s;z-index:1;border-radius:50%}
+.product-wish:hover{background:var(--accent);color:var(--white)}
+.product-wish.active{color:var(--accent-light)}
+.product-quick{position:absolute;bottom:0;left:0;right:0;background:rgba(5,6,8,0.92);border-top:1px solid rgba(27,58,107,0.4);padding:0.75rem;text-align:center;transform:translateY(100%);transition:transform 0.35s;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary-bright);font-weight:400;cursor:pointer;font-family:var(--font-body)}
+.product-card:hover .product-quick{transform:translateY(0)}
+.product-info{padding:1.25rem}
+.product-cat{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--primary-bright);font-weight:300;margin-bottom:0.4rem}
+.product-name{font-family:var(--font-display);font-size:1.1rem;font-weight:400;color:var(--cream);line-height:1.3;margin-bottom:0.6rem}
+.product-desc{font-size:0.78rem;color:var(--text-muted);font-weight:300;line-height:1.6;margin-bottom:1rem}
+.product-price-row{display:flex;align-items:center;gap:0.8rem;margin-bottom:1rem}
+.product-price{font-family:var(--font-display);font-size:1.3rem;font-weight:400;color:var(--accent-light)}
+.product-price-old{font-size:0.85rem;color:var(--text-muted);text-decoration:line-through}
+.product-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.btn-cart{background:transparent;border:1px solid rgba(27,58,107,0.5);color:var(--primary-bright);padding:0.6rem;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;font-weight:400}
+.btn-cart:hover{background:rgba(27,58,107,0.2);border-color:var(--primary-bright)}
+.btn-buy{background:var(--accent);border:none;color:var(--white);padding:0.6rem;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;font-weight:500}
+.btn-buy:hover{background:var(--accent-light)}
+
+/* ─── TRUST SECTION ─── */
+#trust{background:var(--dark-soft)}
+.trust-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:2rem;margin-top:1rem}
+.trust-item{text-align:center;padding:2rem 1rem;border:1px solid transparent;transition:all 0.3s}
+.trust-item:hover{border-color:rgba(27,58,107,0.3);background:rgba(27,58,107,0.05)}
+.trust-icon{width:56px;height:56px;margin:0 auto 1.2rem;background:rgba(27,58,107,0.12);border:1px solid rgba(61,111,204,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.trust-item:nth-child(even) .trust-icon{background:rgba(192,39,45,0.1);border-color:rgba(192,39,45,0.3)}
+.trust-name{font-family:var(--font-display);font-size:1.05rem;font-weight:400;color:var(--cream);margin-bottom:0.4rem}
+.trust-desc{font-size:0.78rem;color:var(--text-muted);font-weight:300;line-height:1.6}
+
+/* ─── INSPIRATION ─── */
+#inspo{background:var(--dark-mid)}
+.inspo-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto;gap:2px}
+@media(max-width:700px){.inspo-grid{grid-template-columns:1fr 1fr}}
+.inspo-item{overflow:hidden;cursor:pointer;position:relative}
+.inspo-item:nth-child(1){grid-column:span 2;grid-row:span 2}
+.inspo-img{width:100%;height:100%;min-height:200px;object-fit:cover;transition:transform 0.7s ease;background:#060810;display:flex;align-items:center;justify-content:center}
+.inspo-item:hover .inspo-img{transform:scale(1.04)}
+.inspo-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(5,6,8,0.75));opacity:0;transition:opacity 0.4s}
+.inspo-item:hover .inspo-overlay{opacity:1}
+/* Alternating blue / red tint on hover */
+.inspo-item:nth-child(odd)::after{content:'';position:absolute;inset:0;background:rgba(27,58,107,0);transition:background 0.4s;pointer-events:none}
+.inspo-item:nth-child(even)::after{content:'';position:absolute;inset:0;background:rgba(192,39,45,0);transition:background 0.4s;pointer-events:none}
+.inspo-item:nth-child(odd):hover::after{background:rgba(27,58,107,0.12)}
+.inspo-item:nth-child(even):hover::after{background:rgba(192,39,45,0.1)}
+.inspo-label{position:absolute;bottom:1rem;left:1rem;font-family:var(--font-display);font-size:1rem;color:var(--white);opacity:0;transform:translateY(8px);transition:all 0.4s;z-index:2}
+.inspo-item:hover .inspo-label{opacity:1;transform:translateY(0)}
+
+/* ─── REVIEWS ─── */
+#reviews{background:var(--dark)}
+.reviews-track{display:flex;gap:1.5rem;overflow-x:auto;padding-bottom:1rem;scrollbar-width:thin;scrollbar-color:rgba(61,111,204,0.4) transparent}
+.reviews-track::-webkit-scrollbar{height:2px}
+.reviews-track::-webkit-scrollbar-thumb{background:linear-gradient(to right,var(--primary-bright),var(--accent));border-radius:1px}
+.review-card{background:var(--dark-mid);border:1px solid rgba(27,58,107,0.2);padding:2rem;min-width:300px;flex-shrink:0;transition:border-color 0.3s}
+.review-card:hover{border-color:rgba(192,39,45,0.3)}
+.review-stars{display:flex;gap:3px;margin-bottom:1rem}
+.review-stars span{color:var(--accent-light);font-size:0.8rem}
+.review-text{font-family:var(--font-display);font-size:1.1rem;font-weight:300;font-style:italic;color:var(--cream);line-height:1.7;margin-bottom:1.5rem}
+.review-author{display:flex;align-items:center;gap:0.8rem}
+.review-avatar{width:38px;height:38px;border-radius:50%;background:rgba(27,58,107,0.2);border:1px solid rgba(61,111,204,0.35);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:0.85rem;color:var(--primary-bright);font-weight:400}
+.review-name{font-size:0.8rem;font-weight:400;color:var(--cream)}
+.review-loc{font-size:0.65rem;color:var(--text-muted);font-weight:300}
+.review-verified{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--primary-bright);font-weight:300;margin-top:2px}
+
+/* ─── CONTACT ─── */
+#contact{background:var(--dark-mid);padding:5rem 5%}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+@media(max-width:700px){.contact-grid{grid-template-columns:1fr}}
+.contact-info-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem}
+.contact-icon{width:40px;height:40px;background:rgba(27,58,107,0.15);border:1px solid rgba(61,111,204,0.3);display:flex;align-items:center;justify-content:center;color:var(--primary-bright);font-size:1rem;flex-shrink:0}
+.contact-detail h4{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary-bright);font-weight:300;margin-bottom:3px}
+.contact-detail p{font-size:0.88rem;color:var(--cream);font-weight:300}
+.social-buttons{display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:2rem}
+.social-btn{display:flex;align-items:center;gap:8px;padding:0.7rem 1.2rem;border:1px solid rgba(27,58,107,0.3);color:var(--cream);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:300;transition:all 0.3s;background:transparent}
+.social-btn:hover{border-color:var(--primary-bright);color:var(--primary-bright);background:rgba(27,58,107,0.08)}
+.social-btn svg{flex-shrink:0}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary-bright);font-weight:300}
+.form-group input,.form-group textarea,.form-group select{background:rgba(255,255,255,0.04);border:1px solid rgba(27,58,107,0.25);color:var(--cream);padding:0.75rem 1rem;font-family:var(--font-body);font-size:0.88rem;font-weight:300;transition:border-color 0.3s;width:100%;outline:none;resize:none}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:rgba(61,111,204,0.6);box-shadow:0 0 0 2px rgba(27,58,107,0.1)}
+.form-group textarea{height:120px}
+.form-group select option{background:var(--dark-mid);color:var(--cream)}
+
+/* ─── FOOTER ─── */
+footer{background:var(--black);padding:4rem 5% 2rem;border-top:1px solid rgba(27,58,107,0.3)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+@media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+.footer-brand .nav-logo{font-size:1.4rem;display:inline-block;margin-bottom:1rem}
+.footer-brand p{font-size:0.82rem;color:var(--text-muted);font-weight:300;line-height:1.7;max-width:260px}
+.footer-newsletter{margin-top:1.5rem;display:flex;gap:0}
+.footer-newsletter input{flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(27,58,107,0.3);border-right:none;color:var(--cream);padding:0.65rem 1rem;font-family:var(--font-body);font-size:0.8rem;outline:none}
+.footer-newsletter input:focus{border-color:rgba(61,111,204,0.5)}
+.footer-newsletter button{background:var(--accent);color:var(--white);border:none;padding:0.65rem 1.2rem;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-weight:500;white-space:nowrap;font-family:var(--font-body);transition:background 0.3s}
+.footer-newsletter button:hover{background:var(--accent-light)}
+.footer-col h4{font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--primary-bright);font-weight:400;margin-bottom:1.2rem}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:0.6rem}
+.footer-col ul li a{color:var(--text-muted);text-decoration:none;font-size:0.82rem;font-weight:300;transition:color 0.3s}
+.footer-col ul li a:hover{color:var(--primary-bright)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:0.72rem;color:var(--text-muted);font-weight:300}
+.footer-bottom-links{display:flex;gap:1.5rem}
+.footer-bottom-links a{font-size:0.72rem;color:var(--text-muted);text-decoration:none;font-weight:300;transition:color 0.3s}
+.footer-bottom-links a:hover{color:var(--accent-light)}
+
+/* ─── FLOATING SOCIAL ─── */
+#floating-social{position:fixed;right:1.2rem;bottom:6rem;z-index:999;display:flex;flex-direction:column;gap:8px}
+.float-btn{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;box-shadow:0 4px 15px rgba(0,0,0,0.4);transition:all 0.3s;font-size:1.1rem}
+.float-btn:hover{transform:scale(1.12);box-shadow:0 6px 20px rgba(0,0,0,0.5)}
+.float-wa{background:#25D366}
+.float-fb{background:#1877F2}
+.float-ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}
+.float-ms{background:linear-gradient(135deg,#0099FF,#A033FF)}
+
+/* ─── QUICK VIEW MODAL ─── */
+#modal{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:1rem}
+#modal.open{display:flex}
+.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.9)}
+.modal-box{position:relative;z-index:1;background:var(--dark-card);max-width:800px;width:100%;max-height:90vh;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(27,58,107,0.4)}
+@media(max-width:600px){.modal-box{grid-template-columns:1fr}}
+.modal-img{background:#060810;min-height:300px;display:flex;align-items:center;justify-content:center;position:relative}
+.modal-close{position:absolute;top:1rem;right:1rem;background:rgba(0,0,0,0.5);border:1px solid rgba(192,39,45,0.4);color:var(--cream);width:32px;height:32px;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;z-index:2}
+.modal-close:hover{background:var(--accent);border-color:var(--accent)}
+.modal-cat{font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--primary-bright);font-weight:300;margin-bottom:0.5rem}
+.modal-name{font-family:var(--font-display);font-size:1.8rem;font-weight:400;color:var(--cream);line-height:1.2;margin-bottom:0.5rem}
+.modal-price{font-family:var(--font-display);font-size:1.6rem;color:var(--accent-light);margin-bottom:0.5rem}
+.modal-old-price{font-size:0.9rem;color:var(--text-muted);text-decoration:line-through;margin-left:0.5rem}
+.modal-desc{font-size:0.85rem;color:var(--text-muted);font-weight:300;line-height:1.7;margin:1rem 0}
+.modal-emi{font-size:0.75rem;color:var(--primary-pale);font-weight:300;margin-bottom:1rem;padding:0.5rem;border:1px solid rgba(27,58,107,0.25);background:rgba(27,58,107,0.07)}
+.modal-variants{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.2rem}
+.variant-pill{padding:0.4rem 0.9rem;border:1px solid rgba(27,58,107,0.3);font-size:0.7rem;color:var(--cream);cursor:pointer;transition:all 0.3s;font-weight:300}
+.variant-pill.active,.variant-pill:hover{border-color:var(--primary-bright);color:var(--primary-bright)}
+.modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.modal-info{padding:2rem}
+
+/* ─── STICKY CART BAR ─── */
+#sticky-cart{position:fixed;bottom:0;left:0;right:0;background:rgba(5,6,8,0.97);backdrop-filter:blur(20px);border-top:1px solid rgba(27,58,107,0.4);padding:0.8rem 5%;display:none;z-index:800;align-items:center;justify-content:space-between;gap:1rem}
+@media(max-width:700px){#sticky-cart.show{display:flex}}
+#sticky-cart .cart-product-name{font-family:var(--font-display);font-size:1rem;color:var(--cream);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#sticky-cart .cart-product-price{color:var(--accent-light);font-family:var(--font-display);font-size:1.1rem;flex-shrink:0}
+#sticky-cart .btn-buy{font-size:0.65rem;padding:0.6rem 1.2rem;flex-shrink:0}
+
+/* ─── LOADING INTRO ─── */
+#loader{position:fixed;inset:0;z-index:9999;background:var(--dark);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.6s,visibility 0.6s}
+#loader.done{opacity:0;visibility:hidden;pointer-events:none}
+.loader-logo{font-family:var(--font-display);font-size:2.2rem;font-weight:300;letter-spacing:0.1em;animation:loaderPulse 1.5s ease-in-out infinite}
+.loader-logo .l-h{color:var(--primary-bright)}
+.loader-logo .l-l{color:var(--accent-light)}
+.loader-line{width:60px;height:2px;background:linear-gradient(to right,var(--primary-bright),var(--accent));margin-top:1rem;animation:loaderLine 1.5s ease-in-out infinite}
+@keyframes loaderPulse{0%,100%{opacity:0.4}50%{opacity:1}}
+@keyframes loaderLine{0%,100%{transform:scaleX(0.3)}50%{transform:scaleX(1)}}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ─── NOTIFICATION ─── */
+#notif{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(100px);background:rgba(5,6,8,0.97);border:1px solid rgba(27,58,107,0.5);color:var(--cream);padding:0.8rem 1.8rem;font-size:0.8rem;font-weight:300;letter-spacing:0.05em;z-index:3000;transition:transform 0.4s;white-space:nowrap;backdrop-filter:blur(10px)}
+#notif.show{transform:translateX(-50%) translateY(0)}
+
+/* ─── LUXURY ROOM SVGs ─── */
+.luxury-svg{width:100%;height:100%;min-height:180px}
+
+/* ─── BADGE STRIP ON HERO ─── */
+.hero-badges{position:absolute;bottom:0;left:0;right:0;display:flex;pointer-events:none;z-index:1}
+.hero-badge-blue{height:3px;flex:1;background:var(--primary)}
+.hero-badge-red{height:3px;flex:1;background:var(--accent)}
+.hero-badge-black{height:3px;flex:1;background:var(--black)}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo"><span class="l-h">Hossain</span> <span class="l-l">Lighting</span></div>
+  <div class="loader-line"></div>
+</div>
+
+<!-- NOTIFICATION -->
+<div id="notif"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="logo-top"><span class="logo-h">Hossain</span>&nbsp;<span class="logo-l">Lighting</span></div>
+    <span>Est. 1991 — Dhaka, Bangladesh</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#categories">Collection</a></li>
+    <li><a href="#deals">Deals</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#inspo">Inspiration</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="nav-icon" title="Search" onclick="notify('Search coming soon')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+    <button class="nav-icon nav-cart-badge" title="Cart" onclick="notify('Cart: 0 items')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-count" id="cart-count">0</span>
+    </button>
+    <button class="hamburger" title="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-glow-blue"></div>
+  <div class="hero-glow-red"></div>
+  <div class="hero-chandelier"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-corner tl"></div>
+  <div class="hero-corner tr"></div>
+  <div class="hero-corner bl"></div>
+  <div class="hero-corner br"></div>
+
+  <!-- Chandelier SVG art -->
+  <svg style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:300px;opacity:0.18;pointer-events:none" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+    <line x1="150" y1="0" x2="150" y2="100" stroke="#3D6FCC" stroke-width="1.5"/>
+    <ellipse cx="150" cy="115" rx="60" ry="18" stroke="#3D6FCC" stroke-width="1" fill="none"/>
+    <ellipse cx="150" cy="115" rx="40" ry="12" stroke="#C0272D" stroke-width="0.5" fill="none"/>
+    <line x1="90" y1="115" x2="60" y2="180" stroke="#3D6FCC" stroke-width="1"/>
+    <line x1="210" y1="115" x2="240" y2="180" stroke="#3D6FCC" stroke-width="1"/>
+    <line x1="120" y1="115" x2="100" y2="190" stroke="#C0272D" stroke-width="1"/>
+    <line x1="180" y1="115" x2="200" y2="190" stroke="#C0272D" stroke-width="1"/>
+    <line x1="150" y1="115" x2="150" y2="200" stroke="#3D6FCC" stroke-width="1.5"/>
+    <circle cx="60" cy="185" r="6" fill="#E03438" opacity="0.9"/>
+    <circle cx="240" cy="185" r="6" fill="#E03438" opacity="0.9"/>
+    <circle cx="100" cy="195" r="6" fill="#3D6FCC" opacity="0.9"/>
+    <circle cx="200" cy="195" r="6" fill="#3D6FCC" opacity="0.9"/>
+    <circle cx="150" cy="205" r="8" fill="#E03438" opacity="0.95"/>
+    <circle cx="60" cy="185" r="20" fill="#3D6FCC" opacity="0.07"/>
+    <circle cx="240" cy="185" r="20" fill="#C0272D" opacity="0.07"/>
+    <circle cx="150" cy="205" r="30" fill="#E03438" opacity="0.08"/>
+    <ellipse cx="150" cy="240" rx="80" ry="8" stroke="#3D6FCC" stroke-width="0.5" fill="none" opacity="0.4"/>
+  </svg>
+
+  <div class="hero-content">
+    <p class="hero-tag">Bangladesh's Finest Lighting Brand</p>
+    <h1 class="hero-title"><span class="t-blue">Hossain</span> <span class="t-red">Lighting</span></h1>
+    <p class="hero-slogan">"Since 1991, Less is more and every light counts."</p>
+    <div class="hero-cta">
+      <a href="#categories" class="btn-primary">Explore Collection</a>
+      <a href="#products" class="btn-red">Shop Now</a>
+    </div>
+  </div>
+  <div class="hero-scroll" onclick="document.getElementById('heritage').scrollIntoView({behavior:'smooth'})">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+  <!-- Tri-color stripe at bottom of hero -->
+  <div class="hero-badges">
+    <div class="hero-badge-blue"></div>
+    <div class="hero-badge-red"></div>
+    <div class="hero-badge-black"></div>
+  </div>
+</section>
+
+<!-- HERITAGE STRIP -->
+<div id="heritage">
+  <div class="heritage-inner">
+    <div class="heritage-item"><h3>33+</h3><p>Years of Heritage</p></div>
+    <div class="heritage-sep"></div>
+    <div class="heritage-item"><h3>10K+</h3><p>Happy Homes</p></div>
+    <div class="heritage-sep"></div>
+    <div class="heritage-item"><h3>500+</h3><p>Premium Products</p></div>
+    <div class="heritage-sep"></div>
+    <div class="heritage-item"><h3>100%</h3><p>Quality Assured</p></div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section id="categories">
+  <div class="section-head reveal">
+    <p class="section-tag">Curated for Your Home</p>
+    <h2 class="section-title">Our <span class="t-red">Collections</span></h2>
+    <div class="divider"></div>
+    <p class="section-sub">Every space deserves lighting that speaks to its soul.</p>
+  </div>
+  <div class="cat-grid reveal">
+    <!-- Chandeliers — blue tinted bg -->
+    <div class="cat-card" onclick="notify('Viewing Chandeliers collection')">
+      <div class="cat-bg" style="background:linear-gradient(135deg,#050810,#0D1525)">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <line x1="200" y1="0" x2="200" y2="120" stroke="#3D6FCC" stroke-width="2"/>
+          <ellipse cx="200" cy="140" rx="80" ry="25" stroke="#3D6FCC" stroke-width="1.5" fill="none"/>
+          <line x1="120" y1="140" x2="60" y2="230" stroke="#3D6FCC" stroke-width="1.5"/>
+          <line x1="280" y1="140" x2="340" y2="230" stroke="#C0272D" stroke-width="1.5"/>
+          <line x1="150" y1="140" x2="110" y2="240" stroke="#C0272D" stroke-width="1.5"/>
+          <line x1="250" y1="140" x2="290" y2="240" stroke="#3D6FCC" stroke-width="1.5"/>
+          <line x1="200" y1="140" x2="200" y2="260" stroke="#3D6FCC" stroke-width="2"/>
+          <circle cx="60" cy="235" r="10" fill="#E03438" opacity="0.95"/>
+          <circle cx="340" cy="235" r="10" fill="#3D6FCC" opacity="0.95"/>
+          <circle cx="110" cy="245" r="8" fill="#3D6FCC" opacity="0.9"/>
+          <circle cx="290" cy="245" r="8" fill="#E03438" opacity="0.9"/>
+          <circle cx="200" cy="265" r="12" fill="#E03438"/>
+          <circle cx="60" cy="235" r="35" fill="#3D6FCC" opacity="0.07"/>
+          <circle cx="340" cy="235" r="35" fill="#C0272D" opacity="0.07"/>
+          <circle cx="200" cy="265" r="50" fill="#E03438" opacity="0.07"/>
+        </svg>
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-name">Luxury Chandeliers</div>
+        <div class="cat-count">48 Products</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </div>
+    <!-- Ceiling -->
+    <div class="cat-card" onclick="notify('Viewing Ceiling Lights')">
+      <div class="cat-bg" style="background:linear-gradient(135deg,#080510,#120A1E)">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="150" cy="80" rx="70" ry="20" stroke="#3D6FCC" stroke-width="1.5" fill="rgba(61,111,204,0.05)"/>
+          <ellipse cx="150" cy="80" rx="45" ry="13" stroke="#C0272D" stroke-width="1" fill="none"/>
+          <circle cx="150" cy="80" r="15" fill="#E03438" opacity="0.9"/>
+          <circle cx="150" cy="80" r="60" fill="#3D6FCC" opacity="0.05"/>
+          <line x1="30" y1="0" x2="270" y2="0" stroke="#3D6FCC" stroke-width="2" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-name">Ceiling Lights</div>
+        <div class="cat-count">62 Products</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </div>
+    <!-- Pendant -->
+    <div class="cat-card" onclick="notify('Viewing Pendant Lights')">
+      <div class="cat-bg" style="background:linear-gradient(135deg,#100508,#1E0A0B)">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <line x1="150" y1="0" x2="150" y2="100" stroke="#C0272D" stroke-width="1.5"/>
+          <path d="M120 100 Q130 130 150 140 Q170 130 180 100 Z" stroke="#C0272D" stroke-width="1.5" fill="rgba(192,39,45,0.08)"/>
+          <circle cx="150" cy="145" r="8" fill="#E03438" opacity="0.95"/>
+          <circle cx="150" cy="145" r="40" fill="#E03438" opacity="0.07"/>
+        </svg>
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-name">Pendant Lights</div>
+        <div class="cat-count">35 Products</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </div>
+    <!-- Wall -->
+    <div class="cat-card" onclick="notify('Viewing Wall Lights')">
+      <div class="cat-bg" style="background:linear-gradient(135deg,#060810,#0C1020)">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <line x1="30" y1="0" x2="30" y2="300" stroke="#3D6FCC" stroke-width="2" opacity="0.6"/>
+          <line x1="30" y1="150" x2="80" y2="150" stroke="#3D6FCC" stroke-width="1.5"/>
+          <path d="M80 130 Q100 150 80 170 Z" stroke="#C0272D" stroke-width="1.5" fill="rgba(192,39,45,0.1)"/>
+          <circle cx="85" cy="150" r="6" fill="#E03438" opacity="0.95"/>
+          <circle cx="85" cy="150" r="30" fill="#3D6FCC" opacity="0.08"/>
+        </svg>
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-name">Wall Lights</div>
+        <div class="cat-count">44 Products</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </div>
+    <!-- Fans -->
+    <div class="cat-card" onclick="notify('Viewing Luxury Fans')">
+      <div class="cat-bg" style="background:linear-gradient(135deg,#080610,#100C1E)">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="150" cy="150" r="12" stroke="#3D6FCC" stroke-width="1.5" fill="rgba(61,111,204,0.1)"/>
+          <ellipse cx="150" cy="100" rx="15" ry="40" transform="rotate(0 150 150)" stroke="#3D6FCC" stroke-width="1" fill="rgba(27,58,107,0.08)"/>
+          <ellipse cx="150" cy="100" rx="15" ry="40" transform="rotate(90 150 150)" stroke="#C0272D" stroke-width="1" fill="rgba(192,39,45,0.06)"/>
+          <ellipse cx="150" cy="100" rx="15" ry="40" transform="rotate(180 150 150)" stroke="#3D6FCC" stroke-width="1" fill="rgba(27,58,107,0.08)"/>
+          <ellipse cx="150" cy="100" rx="15" ry="40" transform="rotate(270 150 150)" stroke="#C0272D" stroke-width="1" fill="rgba(192,39,45,0.06)"/>
+          <circle cx="150" cy="150" r="6" fill="#E03438" opacity="0.9"/>
+        </svg>
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-name">Luxury Fans</div>
+        <div class="cat-count">28 Products</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </div>
+    <!-- Smart -->
+    <div class="cat-card" onclick="notify('Viewing Smart Lighting')">
+      <div class="cat-bg" style="background:linear-gradient(135deg,#060810,#0A0E18)">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.5" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="150" cy="120" r="40" stroke="#3D6FCC" stroke-width="1.5" fill="none"/>
+          <circle cx="150" cy="120" r="25" stroke="#C0272D" stroke-width="1" fill="rgba(192,39,45,0.05)"/>
+          <line x1="150" y1="160" x2="150" y2="185" stroke="#3D6FCC" stroke-width="1.5"/>
+          <line x1="130" y1="185" x2="170" y2="185" stroke="#C0272D" stroke-width="1.5"/>
+          <circle cx="150" cy="120" r="8" fill="#E03438" opacity="0.95"/>
+          <circle cx="150" cy="120" r="60" fill="#3D6FCC" opacity="0.04"/>
+        </svg>
+      </div>
+      <div class="cat-overlay"></div>
+      <div class="cat-content">
+        <div class="cat-name">Smart Lighting</div>
+        <div class="cat-count">20 Products</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </div>
+  </div>
+</section>
+
+<!-- FLASH DEALS -->
+<section id="deals">
+  <div class="section-head reveal">
+    <p class="section-tag">Limited Time</p>
+    <h2 class="section-title">Flash <span class="t-red">Deals</span></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="countdown reveal">
+    <span class="countdown-label">Ends in</span>
+    <div class="count-box"><span class="count-num" id="cd-h">08</span><span class="count-unit">Hours</span></div>
+    <div class="count-sep">:</div>
+    <div class="count-box"><span class="count-num" id="cd-m">45</span><span class="count-unit">Mins</span></div>
+    <div class="count-sep">:</div>
+    <div class="count-box"><span class="count-num" id="cd-s">00</span><span class="count-unit">Secs</span></div>
+  </div>
+  <div class="deals-grid" id="deals-grid"></div>
+</section>
+
+<!-- BEST SELLERS -->
+<section id="products" style="background:var(--dark-soft)">
+  <div class="section-head center reveal">
+    <p class="section-tag">Most Loved</p>
+    <h2 class="section-title">Best <span class="t-blue">Sellers</span></h2>
+    <div class="divider center"></div>
+    <p class="section-sub">Handpicked pieces that have transformed thousands of homes across Bangladesh.</p>
+  </div>
+  <div class="deals-grid" id="bestsellers-grid"></div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="trust">
+  <div class="section-head center reveal">
+    <p class="section-tag">Why Hossain</p>
+    <h2 class="section-title">Crafted with <span class="t-red">Purpose</span></h2>
+    <div class="divider center"></div>
+  </div>
+  <div class="trust-grid">
+    <div class="trust-item reveal">
+      <div class="trust-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D6FCC" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <h3 class="trust-name">Since 1991</h3>
+      <p class="trust-desc">Over three decades of lighting excellence, trusted by generations of Bangladeshi homeowners.</p>
+    </div>
+    <div class="trust-item reveal">
+      <div class="trust-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E03438" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3 class="trust-name">Premium Quality</h3>
+      <p class="trust-desc">Sourced from the finest materials globally. Every piece undergoes rigorous quality inspection before delivery.</p>
+    </div>
+    <div class="trust-item reveal">
+      <div class="trust-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D6FCC" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <h3 class="trust-name">Energy Efficient</h3>
+      <p class="trust-desc">LED-compatible designs that cut your electricity bill without compromising on beauty or brilliance.</p>
+    </div>
+    <div class="trust-item reveal">
+      <div class="trust-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E03438" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+      </div>
+      <h3 class="trust-name">Elegant Design</h3>
+      <p class="trust-desc">Collaborating with international designers to bring contemporary luxury aesthetics to your home.</p>
+    </div>
+    <div class="trust-item reveal">
+      <div class="trust-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D6FCC" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <h3 class="trust-name">Fast Delivery</h3>
+      <p class="trust-desc">Nationwide delivery across Bangladesh. Dhaka orders delivered within 24 hours. Safe, insured shipping.</p>
+    </div>
+    <div class="trust-item reveal">
+      <div class="trust-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E03438" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <h3 class="trust-name">10K+ Happy Homes</h3>
+      <p class="trust-desc">Join over ten thousand families who have elevated their living spaces with Hossain Lighting.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INSPIRATION GALLERY -->
+<section id="inspo">
+  <div class="section-head reveal">
+    <p class="section-tag">Real Interiors</p>
+    <h2 class="section-title">Room <span class="t-blue">Inspiration</span></h2>
+    <div class="divider"></div>
+    <p class="section-sub">See how Hossain transforms ordinary rooms into extraordinary experiences.</p>
+  </div>
+  <div class="inspo-grid reveal">
+    <div class="inspo-item" onclick="notify('Luxury Living Room — Hossain Imperial Chandelier')">
+      <svg class="luxury-svg" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" style="background:linear-gradient(160deg,#050810,#0A0D18,#080510);min-height:400px">
+        <rect x="0" y="380" width="600" height="120" fill="#0a0d14"/>
+        <rect x="40" y="200" width="180" height="180" rx="2" fill="#0f1420" stroke="#1a2035" stroke-width="1"/>
+        <rect x="380" y="200" width="180" height="180" rx="2" fill="#0f1420" stroke="#1a2035" stroke-width="1"/>
+        <rect x="60" y="380" width="140" height="50" rx="1" fill="#0c0f1a"/>
+        <rect x="400" y="380" width="140" height="50" rx="1" fill="#0c0f1a"/>
+        <line x1="300" y1="0" x2="300" y2="120" stroke="#3D6FCC" stroke-width="2" opacity="0.7"/>
+        <ellipse cx="300" cy="140" rx="90" ry="28" stroke="#3D6FCC" stroke-width="1.5" fill="rgba(61,111,204,0.05)" opacity="0.8"/>
+        <line x1="210" y1="140" x2="160" y2="220" stroke="#3D6FCC" stroke-width="1.5" opacity="0.7"/>
+        <line x1="390" y1="140" x2="440" y2="220" stroke="#C0272D" stroke-width="1.5" opacity="0.7"/>
+        <line x1="240" y1="140" x2="210" y2="230" stroke="#C0272D" stroke-width="1.2" opacity="0.7"/>
+        <line x1="360" y1="140" x2="390" y2="230" stroke="#3D6FCC" stroke-width="1.2" opacity="0.7"/>
+        <line x1="300" y1="140" x2="300" y2="240" stroke="#3D6FCC" stroke-width="2" opacity="0.7"/>
+        <circle cx="160" cy="225" r="8" fill="#E03438" opacity="0.95"/>
+        <circle cx="440" cy="225" r="8" fill="#3D6FCC" opacity="0.95"/>
+        <circle cx="210" cy="235" r="7" fill="#3D6FCC" opacity="0.9"/>
+        <circle cx="390" cy="235" r="7" fill="#E03438" opacity="0.9"/>
+        <circle cx="300" cy="245" r="10" fill="#E03438"/>
+        <ellipse cx="160" cy="225" rx="50" ry="25" fill="#C0272D" opacity="0.07"/>
+        <ellipse cx="440" cy="225" rx="50" ry="25" fill="#3D6FCC" opacity="0.07"/>
+        <ellipse cx="300" cy="245" rx="80" ry="40" fill="#E03438" opacity="0.07"/>
+        <rect x="0" y="380" width="600" height="2" fill="#1B3A6B" opacity="0.2"/>
+      </svg>
+      <div class="inspo-overlay"></div>
+      <div class="inspo-label">Luxury Living Room</div>
+    </div>
+    <div class="inspo-item" onclick="notify('Dining Room — Hossain Cascade Pendant')">
+      <svg class="luxury-svg" viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg" style="background:linear-gradient(160deg,#060810,#0C1020)">
+        <line x1="140" y1="0" x2="140" y2="70" stroke="#3D6FCC" stroke-width="1.5" opacity="0.7"/>
+        <path d="M110 70 Q120 100 140 110 Q160 100 170 70 Z" stroke="#C0272D" stroke-width="1.5" fill="rgba(192,39,45,0.08)" opacity="0.9"/>
+        <circle cx="140" cy="113" r="7" fill="#E03438"/>
+        <circle cx="140" cy="113" r="40" fill="#C0272D" opacity="0.07"/>
+        <rect x="40" y="160" width="200" height="8" rx="2" fill="#0d1420" stroke="#3D6FCC" stroke-width="0.5" opacity="0.4"/>
+      </svg>
+      <div class="inspo-overlay"></div>
+      <div class="inspo-label">Dining Room</div>
+    </div>
+    <div class="inspo-item" onclick="notify('Master Bedroom — Hossain Cloud Series')">
+      <svg class="luxury-svg" viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg" style="background:linear-gradient(160deg,#080510,#10081A)">
+        <ellipse cx="140" cy="60" rx="55" ry="18" stroke="#3D6FCC" stroke-width="1" fill="rgba(27,58,107,0.05)" opacity="0.8"/>
+        <circle cx="140" cy="60" r="12" fill="#3D6FCC" opacity="0.85"/>
+        <circle cx="140" cy="60" r="50" fill="#3D6FCC" opacity="0.05"/>
+        <line x1="0" y1="0" x2="280" y2="0" stroke="#C0272D" stroke-width="1.5" opacity="0.3"/>
+        <rect x="30" y="150" width="220" height="90" rx="3" fill="#100816" stroke="#1a1030" stroke-width="1"/>
+      </svg>
+      <div class="inspo-overlay"></div>
+      <div class="inspo-label">Master Bedroom</div>
+    </div>
+    <div class="inspo-item" onclick="notify('Home Office — Hossain Minimal Desk Light')">
+      <svg class="luxury-svg" viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg" style="background:linear-gradient(160deg,#060810,#0A0D1A)">
+        <line x1="40" y1="0" x2="40" y2="200" stroke="#1B3A6B" stroke-width="1.5" opacity="0.5"/>
+        <line x1="40" y1="100" x2="100" y2="100" stroke="#3D6FCC" stroke-width="1.5" opacity="0.7"/>
+        <ellipse cx="105" cy="100" rx="8" ry="20" stroke="#C0272D" stroke-width="1" fill="rgba(192,39,45,0.08)" opacity="0.8"/>
+        <circle cx="108" cy="100" r="5" fill="#E03438" opacity="0.9"/>
+        <circle cx="108" cy="100" r="30" fill="#C0272D" opacity="0.06"/>
+      </svg>
+      <div class="inspo-overlay"></div>
+      <div class="inspo-label">Home Office</div>
+    </div>
+    <div class="inspo-item" onclick="notify('Foyer — Hossain Grand Entry Chandelier')">
+      <svg class="luxury-svg" viewBox="0 0 280 240" xmlns="http://www.w3.org/2000/svg" style="background:linear-gradient(160deg,#060810,#0C1020)">
+        <line x1="140" y1="0" x2="140" y2="80" stroke="#3D6FCC" stroke-width="1.5" opacity="0.7"/>
+        <ellipse cx="140" cy="95" rx="50" ry="15" stroke="#3D6FCC" stroke-width="1" fill="none" opacity="0.7"/>
+        <line x1="90" y1="95" x2="70" y2="145" stroke="#C0272D" stroke-width="1" opacity="0.7"/>
+        <line x1="190" y1="95" x2="210" y2="145" stroke="#3D6FCC" stroke-width="1" opacity="0.7"/>
+        <line x1="140" y1="95" x2="140" y2="155" stroke="#3D6FCC" stroke-width="1.5" opacity="0.7"/>
+        <circle cx="70" cy="148" r="6" fill="#3D6FCC" opacity="0.9"/>
+        <circle cx="210" cy="148" r="6" fill="#E03438" opacity="0.9"/>
+        <circle cx="140" cy="158" r="8" fill="#E03438"/>
+      </svg>
+      <div class="inspo-overlay"></div>
+      <div class="inspo-label">Grand Foyer</div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-head center reveal">
+    <p class="section-tag">What People Say</p>
+    <h2 class="section-title">Customer <span class="t-red">Stories</span></h2>
+    <div class="divider center"></div>
+  </div>
+  <div class="reviews-track reveal" id="reviews-track"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--dark-mid);padding:5rem 5%">
+  <div class="contact-grid">
+    <div>
+      <div class="section-head reveal">
+        <p class="section-tag">Get in Touch</p>
+        <h2 class="section-title">Visit or <span class="t-blue">Call Us</span></h2>
+        <div class="divider"></div>
+        <p class="section-sub" style="margin-top:1rem">We're here to help you find the perfect light for every corner of your home.</p>
+      </div>
+      <div style="margin-top:2rem">
+        <div class="contact-info-item reveal">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3D6FCC" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="contact-detail">
+            <h4>Phone / WhatsApp</h4>
+            <p>+880 1XXX-XXXXXX</p>
+          </div>
+        </div>
+        <div class="contact-info-item reveal">
+          <div class="contact-icon" style="background:rgba(192,39,45,0.1);border-color:rgba(192,39,45,0.3)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E03438" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-detail">
+            <h4>Email</h4>
+            <p>hello@hossainlighting.com</p>
+          </div>
+        </div>
+        <div class="contact-info-item reveal">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3D6FCC" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-detail">
+            <h4>Showroom</h4>
+            <p>Your Store Address, Dhaka, Bangladesh</p>
+          </div>
+        </div>
+      </div>
+      <div class="social-buttons reveal">
+        <a href="#" class="social-btn" onclick="notify('Opening WhatsApp…')" id="wa-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp
+        </a>
+        <a href="#" class="social-btn" onclick="notify('Opening Facebook…')" id="fb-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a href="#" class="social-btn" onclick="notify('Opening Instagram…')" id="ig-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="url(#ig-grad2)">
+            <defs><linearGradient id="ig-grad2" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#f09433"/><stop offset="50%" style="stop-color:#dc2743"/><stop offset="100%" style="stop-color:#bc1888"/></linearGradient></defs>
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="#" class="social-btn" onclick="notify('Opening Messenger…')" id="ms-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#0099FF"><path d="M12 0C5.374 0 0 4.975 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.626 0 12-4.974 12-11.111C24 4.975 18.626 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8.3l3.131 3.26L19.752 8.3l-6.561 6.663z"/></svg>
+          Messenger
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="section-head reveal">
+        <p class="section-tag">Send a Message</p>
+        <h2 class="section-title">We'd Love to <span class="t-red">Help</span></h2>
+        <div class="divider"></div>
+      </div>
+      <form class="contact-form reveal" onsubmit="handleContactForm(event)" style="margin-top:2rem">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+880 XXXX-XXXXXX" required>
+        </div>
+        <div class="form-group">
+          <label>I'm Interested In</label>
+          <select>
+            <option>Chandeliers</option>
+            <option>Ceiling Lights</option>
+            <option>Pendant Lights</option>
+            <option>Wall Lights</option>
+            <option>Luxury Fans</option>
+            <option>Smart Lighting</option>
+            <option>Custom Order</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell us about your space and what you're looking for…"></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;text-align:center;padding:1rem">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo" style="margin-bottom:1rem;display:inline-block">
+        <div class="logo-top"><span class="logo-h">Hossain</span>&nbsp;<span class="logo-l">Lighting</span></div>
+        <span>Est. 1991 — Dhaka, Bangladesh</span>
+      </a>
+      <p>Transforming homes across Bangladesh into elegant, luminous experiences since 1991. Where less is more, and every light counts.</p>
+      <div class="footer-newsletter">
+        <input type="email" placeholder="Your email address">
+        <button onclick="notify('Subscribed! Thank you.')">Subscribe</button>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Collection</h4>
+      <ul>
+        <li><a href="#" onclick="notify('Chandeliers')">Chandeliers</a></li>
+        <li><a href="#" onclick="notify('Ceiling Lights')">Ceiling Lights</a></li>
+        <li><a href="#" onclick="notify('Pendant Lights')">Pendant Lights</a></li>
+        <li><a href="#" onclick="notify('Wall Lights')">Wall Lights</a></li>
+        <li><a href="#" onclick="notify('Luxury Fans')">Luxury Fans</a></li>
+        <li><a href="#" onclick="notify('Smart Lighting')">Smart Lighting</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">Showroom</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Track Order</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Installation</a></li>
+        <li><a href="#">Warranty</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#" id="footer-wa">WhatsApp</a></li>
+        <li><a href="#" id="footer-fb">Facebook</a></li>
+        <li><a href="#" id="footer-ig">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- Tri-color footer bar -->
+  <div style="display:flex;height:2px;margin-bottom:2rem">
+    <div style="flex:1;background:var(--primary)"></div>
+    <div style="flex:1;background:var(--accent)"></div>
+    <div style="flex:1;background:#222"></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Hossain Lighting. All rights reserved. | Dhaka, Bangladesh</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING SOCIAL BUTTONS -->
+<div id="floating-social">
+  <a href="#" class="float-btn float-wa" title="WhatsApp" id="float-wa" onclick="notify('Opening WhatsApp…')">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+  <a href="#" class="float-btn float-fb" title="Facebook" id="float-fb" onclick="notify('Opening Facebook…')">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  </a>
+  <a href="#" class="float-btn float-ig" title="Instagram" id="float-ig" onclick="notify('Opening Instagram…')">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+  </a>
+  <a href="#" class="float-btn float-ms" title="Messenger" id="float-ms" onclick="notify('Opening Messenger…')">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.374 0 0 4.975 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.626 0 12-4.974 12-11.111C24 4.975 18.626 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8.3l3.131 3.26L19.752 8.3l-6.561 6.663z"/></svg>
+  </a>
+</div>
+
+<!-- QUICK VIEW MODAL -->
+<div id="modal">
+  <div class="modal-backdrop" onclick="closeModal()"></div>
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-img" id="modal-img">
+      <div class="product-img-placeholder" style="width:100%;min-height:300px">
+        <svg id="modal-product-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:0.6;background:#060810"></svg>
+      </div>
+    </div>
+    <div class="modal-info" id="modal-info"></div>
+  </div>
+</div>
+
+<!-- STICKY CART (mobile) -->
+<div id="sticky-cart">
+  <span class="cart-product-name" id="sticky-product-name">Hossain Imperial Chandelier</span>
+  <span class="cart-product-price" id="sticky-product-price">৳ 18,500</span>
+  <button class="btn-buy" onclick="addToCart()">Add to Cart</button>
+</div>
+
+<script>
+const CONFIG = {
+  whatsapp: "https://wa.me/8801XXXXXXXXX",
+  facebook: "https://facebook.com/hossainlighting",
+  instagram: "https://instagram.com/hossainlighting",
+  messenger: "https://m.me/hossainlighting",
+  phone: "+880 1XXX-XXXXXX",
+  email: "hello@hossainlighting.com",
+  address: "Your Store Address, Dhaka, Bangladesh",
+  dealHours: 8
+};
+
+const products = [
+  {id:1,name:"Imperial Crystal Chandelier",cat:"Chandelier",price:38500,oldPrice:45000,desc:"Hand-cut crystal arms cascade in celestial tiers. Each facet catches light to create a breathtaking display that transforms any grand room into a palace.",badge:"Best Seller",deal:true},
+  {id:2,name:"Cascade Pendant Trio",cat:"Pendant Light",price:12800,oldPrice:16000,desc:"Three hand-blown glass pendants in a cascading arrangement. Warm diffused light creates an intimate dining atmosphere that feels like candlelight.",badge:"New Arrival",deal:true},
+  {id:3,name:"Mist Ceiling Panel",cat:"Ceiling Light",price:8500,oldPrice:10500,desc:"Ultra-thin LED panel with tunable warm-to-cool light. Recessed frame design makes it disappear into your ceiling, leaving only pure illumination.",badge:"Hot Deal",deal:true},
+  {id:4,name:"Arc Wall Sconce",cat:"Wall Light",price:6200,oldPrice:7800,desc:"Brushed brass arm with frosted glass shade. Brings the warmth of a Parisian café to your bedroom or hallway walls.",badge:null,deal:false},
+  {id:5,name:"Solaris Ceiling Fan",cat:"Luxury Fan",price:22000,oldPrice:28000,desc:"56-inch walnut blades with integrated dimmable LED ring. Whisper-quiet motor. Remote-controlled elegance that cools and illuminates.",badge:"Trending",deal:false},
+  {id:6,name:"Orb Globe Pendant",cat:"Pendant Light",price:9400,oldPrice:11500,desc:"Hammered brass sphere with opaque milk glass diffuser. Sculptural by day, magical by night. The centrepiece your kitchen island deserves.",badge:null,deal:false},
+  {id:7,name:"Linear LED Track",cat:"Smart Lighting",price:15600,oldPrice:19000,desc:"Modular track system with six individually-aimed spotlights. Colour temperature from 2700K warm to 6000K daylight. App-controlled via Bluetooth.",badge:"Smart",deal:false},
+  {id:8,name:"Floret Chandelier",cat:"Chandelier",price:28000,oldPrice:34000,desc:"Twelve blooming petal shades in matte white porcelain, each cradling an Edison bulb. Organic, sculptural, and utterly unforgettable.",badge:"Limited",deal:false},
+];
+
+/* Blue & Red alternating SVG light illustrations */
+const svgLights = [
+  `<line x1="150" y1="0" x2="150" y2="80" stroke="#3D6FCC" stroke-width="2"/><ellipse cx="150" cy="95" rx="60" ry="18" stroke="#3D6FCC" stroke-width="1.5" fill="rgba(61,111,204,0.05)"/><line x1="90" y1="95" x2="60" y2="160" stroke="#3D6FCC" stroke-width="1.5"/><line x1="210" y1="95" x2="240" y2="160" stroke="#C0272D" stroke-width="1.5"/><line x1="120" y1="95" x2="100" y2="165" stroke="#C0272D" stroke-width="1.2"/><line x1="180" y1="95" x2="200" y2="165" stroke="#3D6FCC" stroke-width="1.2"/><line x1="150" y1="95" x2="150" y2="175" stroke="#3D6FCC" stroke-width="2"/><circle cx="60" cy="164" r="8" fill="#E03438" opacity="0.95"/><circle cx="240" cy="164" r="8" fill="#3D6FCC" opacity="0.95"/><circle cx="100" cy="169" r="7" fill="#3D6FCC" opacity="0.9"/><circle cx="200" cy="169" r="7" fill="#E03438" opacity="0.9"/><circle cx="150" cy="178" r="10" fill="#E03438"/><circle cx="60" cy="164" r="30" fill="#C0272D" opacity="0.07"/><circle cx="240" cy="164" r="30" fill="#3D6FCC" opacity="0.07"/><circle cx="150" cy="178" r="45" fill="#E03438" opacity="0.08"/>`,
+  `<line x1="150" y1="0" x2="150" y2="90" stroke="#C0272D" stroke-width="2"/><path d="M115 90 Q125 130 150 145 Q175 130 185 90 Z" stroke="#C0272D" stroke-width="1.5" fill="rgba(192,39,45,0.08)"/><circle cx="150" cy="148" r="9" fill="#E03438"/><circle cx="150" cy="148" r="50" fill="#C0272D" opacity="0.07"/>`,
+  `<line x1="0" y1="20" x2="300" y2="20" stroke="#3D6FCC" stroke-width="1.5" opacity="0.4"/><ellipse cx="150" cy="80" rx="70" ry="22" stroke="#3D6FCC" stroke-width="1.5" fill="rgba(61,111,204,0.06)"/><ellipse cx="150" cy="80" rx="45" ry="14" stroke="#C0272D" stroke-width="1" fill="rgba(192,39,45,0.04)"/><circle cx="150" cy="80" r="14" fill="#E03438" opacity="0.9"/><circle cx="150" cy="80" r="60" fill="#3D6FCC" opacity="0.06"/>`,
+  `<line x1="30" y1="0" x2="30" y2="300" stroke="#3D6FCC" stroke-width="2" opacity="0.5"/><line x1="30" y1="150" x2="90" y2="150" stroke="#3D6FCC" stroke-width="1.5"/><path d="M90 125 Q115 150 90 175 Z" stroke="#C0272D" stroke-width="1.5" fill="rgba(192,39,45,0.1)"/><circle cx="95" cy="150" r="7" fill="#E03438" opacity="0.95"/><circle cx="95" cy="150" r="35" fill="#C0272D" opacity="0.08"/>`,
+  `<circle cx="150" cy="150" r="14" stroke="#3D6FCC" stroke-width="1.5" fill="rgba(27,58,107,0.1)"/><ellipse cx="150" cy="90" rx="18" ry="50" transform="rotate(0 150 150)" stroke="#3D6FCC" stroke-width="1" fill="rgba(27,58,107,0.06)"/><ellipse cx="150" cy="90" rx="18" ry="50" transform="rotate(72 150 150)" stroke="#C0272D" stroke-width="1" fill="rgba(192,39,45,0.06)"/><ellipse cx="150" cy="90" rx="18" ry="50" transform="rotate(144 150 150)" stroke="#3D6FCC" stroke-width="1" fill="rgba(27,58,107,0.06)"/><ellipse cx="150" cy="90" rx="18" ry="50" transform="rotate(216 150 150)" stroke="#C0272D" stroke-width="1" fill="rgba(192,39,45,0.06)"/><circle cx="150" cy="150" r="8" fill="#E03438"/>`,
+  `<line x1="150" y1="0" x2="150" y2="60" stroke="#C0272D" stroke-width="1.5"/><circle cx="150" cy="130" r="65" stroke="#C0272D" stroke-width="1.5" fill="rgba(192,39,45,0.04)"/><circle cx="150" cy="130" r="40" stroke="#3D6FCC" stroke-width="0.8" fill="rgba(61,111,204,0.03)"/><circle cx="150" cy="130" r="10" fill="#E03438" opacity="0.9"/><circle cx="150" cy="130" r="70" fill="#C0272D" opacity="0.05"/>`,
+  `<rect x="60" y="40" width="180" height="8" rx="4" stroke="#3D6FCC" stroke-width="1" fill="rgba(27,58,107,0.1)"/><line x1="90" y1="48" x2="100" y2="80" stroke="#3D6FCC" stroke-width="1.2"/><line x1="130" y1="48" x2="140" y2="90" stroke="#C0272D" stroke-width="1.2"/><line x1="170" y1="48" x2="160" y2="75" stroke="#3D6FCC" stroke-width="1.2"/><circle cx="100" cy="84" r="7" fill="#E03438" opacity="0.9"/><circle cx="140" cy="94" r="7" fill="#3D6FCC" opacity="0.9"/><circle cx="160" cy="79" r="7" fill="#E03438" opacity="0.9"/>`,
+  `<line x1="150" y1="0" x2="150" y2="70" stroke="#3D6FCC" stroke-width="2"/><circle cx="150" cy="90" r="20" stroke="#C0272D" stroke-width="1.5" fill="rgba(192,39,45,0.06)"/><line x1="130" y1="90" x2="80" y2="150" stroke="#3D6FCC" stroke-width="1.2"/><line x1="170" y1="90" x2="220" y2="150" stroke="#C0272D" stroke-width="1.2"/><line x1="140" y1="105" x2="110" y2="160" stroke="#C0272D" stroke-width="1.2"/><line x1="160" y1="105" x2="190" y2="160" stroke="#3D6FCC" stroke-width="1.2"/><line x1="150" y1="110" x2="150" y2="170" stroke="#3D6FCC" stroke-width="1.5"/><circle cx="80" cy="154" r="9" fill="#E03438" opacity="0.9"/><circle cx="220" cy="154" r="9" fill="#3D6FCC" opacity="0.9"/><circle cx="110" cy="164" r="7" fill="#3D6FCC" opacity="0.85"/><circle cx="190" cy="164" r="7" fill="#E03438" opacity="0.85"/><circle cx="150" cy="174" r="10" fill="#E03438"/><circle cx="150" cy="174" r="40" fill="#C0272D" opacity="0.07"/>`,
+];
+
+function formatBDT(n){return '৳ '+n.toLocaleString('en-BD')}
+
+function renderProductCard(p,idx){
+  const svg = svgLights[idx % svgLights.length];
+  const wishId = 'wish-'+p.id;
+  return `<div class="product-card reveal" id="pc-${p.id}">
+    <div class="product-img">
+      <div class="product-img-placeholder">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;background:linear-gradient(135deg,#050810,#0c1020)">${svg}</svg>
+      </div>
+      ${p.badge?`<div class="product-badge">${p.badge}</div>`:''}
+      <button class="product-wish" id="${wishId}" onclick="toggleWish('${wishId}',event)" title="Wishlist">♡</button>
+      <button class="product-quick" onclick="openModal(${p.id})">Quick View</button>
+    </div>
+    <div class="product-info">
+      <div class="product-cat">${p.cat}</div>
+      <div class="product-name">${p.name}</div>
+      <div class="product-desc">${p.desc.substring(0,80)}…</div>
+      <div class="product-price-row">
+        <span class="product-price">${formatBDT(p.price)}</span>
+        ${p.oldPrice?`<span class="product-price-old">${formatBDT(p.oldPrice)}</span>`:''}
+      </div>
+      <div class="product-actions">
+        <button class="btn-cart" onclick="addToCartItem(${p.id})">Add to Cart</button>
+        <button class="btn-buy" onclick="openModal(${p.id})">Buy Now</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+document.getElementById('deals-grid').innerHTML = products.filter(p=>p.deal).map((p,i)=>renderProductCard(p,i)).join('');
+document.getElementById('bestsellers-grid').innerHTML = products.map((p,i)=>renderProductCard(p,i)).join('');
+
+/* REVIEWS */
+const reviews = [
+  {name:"Nasrin Akter",loc:"Gulshan, Dhaka",text:"The Imperial Chandelier completely changed my drawing room. Guests always comment on it. I never imagined a light could make such a difference.",stars:5,init:"NA"},
+  {name:"Rafiqul Islam",loc:"Dhanmondi, Dhaka",text:"Bought the ceiling fan for our master bedroom. It's whisper quiet and looks stunning. Very happy with the quality for the price.",stars:5,init:"RI"},
+  {name:"Sultana Begum",loc:"Chittagong",text:"The pendant lights in my dining room create such a romantic atmosphere. The delivery was on time and the packaging was excellent.",stars:5,init:"SB"},
+  {name:"Aminul Haque",loc:"Uttara, Dhaka",text:"I was hesitant to buy online but Hossain's team helped me choose the perfect lights for each room. Truly a premium experience.",stars:5,init:"AH"},
+  {name:"Fatema Khanam",loc:"Sylhet",text:"The wall sconces in my hallway look like they belong in a five-star hotel. Very impressed with the build quality and design.",stars:5,init:"FK"},
+  {name:"Tanvir Ahmed",loc:"Mirpur, Dhaka",text:"Ordered the track lighting for my home office. Smart controls work perfectly. Installation was easy with their video guide.",stars:4,init:"TA"},
+];
+document.getElementById('reviews-track').innerHTML = reviews.map(r=>`
+  <div class="review-card">
+    <div class="review-stars">${Array(r.stars).fill('★').join('')}${Array(5-r.stars).fill('☆').join('')}</div>
+    <p class="review-text">"${r.text}"</p>
+    <div class="review-author">
+      <div class="review-avatar">${r.init}</div>
+      <div>
+        <div class="review-name">${r.name}</div>
+        <div class="review-loc">${r.loc}</div>
+        <div class="review-verified">✓ Verified Purchase</div>
+      </div>
+    </div>
+  </div>
+`).join('');
+
+/* COUNTDOWN */
+let endTime = Date.now() + CONFIG.dealHours * 3600000;
+function updateCountdown(){
+  const diff = Math.max(0, endTime - Date.now());
+  const h = Math.floor(diff/3600000);
+  const m = Math.floor((diff%3600000)/60000);
+  const s = Math.floor((diff%60000)/1000);
+  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+/* NAV SCROLL */
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+/* SCROLL REVEAL */
+const revealObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}});
+},{threshold:0.1});
+function observeReveal(){document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el))}
+observeReveal();
+const mutObserver = new MutationObserver(observeReveal);
+mutObserver.observe(document.body,{childList:true,subtree:true});
+
+/* WISHLIST */
+const wishlisted = new Set();
+function toggleWish(id,e){
+  e.stopPropagation();
+  const btn = document.getElementById(id);
+  if(wishlisted.has(id)){wishlisted.delete(id);btn.textContent='♡';btn.classList.remove('active');notify('Removed from wishlist')}
+  else{wishlisted.add(id);btn.textContent='♥';btn.classList.add('active');notify('Added to wishlist ♥')}
+}
+
+/* CART */
+let cartCount = 0;
+function addToCartItem(pid){
+  cartCount++;
+  document.getElementById('cart-count').textContent = cartCount;
+  const p = products.find(x=>x.id===pid);
+  notify(`${p.name} added to cart ✓`);
+  document.getElementById('sticky-product-name').textContent = p.name;
+  document.getElementById('sticky-product-price').textContent = formatBDT(p.price);
+  document.getElementById('sticky-cart').classList.add('show');
+}
+function addToCart(){
+  cartCount++;
+  document.getElementById('cart-count').textContent = cartCount;
+  notify('Added to cart ✓');
+}
+
+/* QUICK VIEW MODAL */
+function openModal(pid){
+  const p = products.find(x=>x.id===pid);
+  const svgContent = svgLights[(pid-1) % svgLights.length];
+  document.getElementById('modal-product-svg').innerHTML = svgContent;
+  const disc = p.oldPrice ? Math.round((1-p.price/p.oldPrice)*100) : 0;
+  document.getElementById('modal-info').innerHTML = `
+    <div class="modal-cat">${p.cat}</div>
+    <h2 class="modal-name">${p.name}</h2>
+    <div style="display:flex;align-items:baseline;gap:0.6rem;margin-bottom:0.5rem">
+      <span class="modal-price">${formatBDT(p.price)}</span>
+      ${p.oldPrice?`<span class="modal-old-price">${formatBDT(p.oldPrice)}</span><span style="background:rgba(192,39,45,0.15);color:#E03438;font-size:0.7rem;padding:2px 8px;font-weight:400">-${disc}%</span>`:''}
+    </div>
+    <div class="modal-emi">📦 Free delivery to Dhaka · 3-month installment available · 1-year warranty</div>
+    <p class="modal-desc">${p.desc}</p>
+    <p style="font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--primary-bright);margin-bottom:0.5rem;font-weight:300">Finish</p>
+    <div class="modal-variants">
+      <div class="variant-pill active">Navy Blue</div>
+      <div class="variant-pill" onclick="this.parentNode.querySelectorAll('.variant-pill').forEach(v=>v.classList.remove('active'));this.classList.add('active')">Chrome</div>
+      <div class="variant-pill" onclick="this.parentNode.querySelectorAll('.variant-pill').forEach(v=>v.classList.remove('active'));this.classList.add('active')">Matte Black</div>
+      <div class="variant-pill" onclick="this.parentNode.querySelectorAll('.variant-pill').forEach(v=>v.classList.remove('active'));this.classList.add('active')">Deep Red</div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cart" onclick="addToCartItem(${pid});closeModal()">Add to Cart</button>
+      <button class="btn-buy" onclick="addToCartItem(${pid});closeModal()">Buy Now</button>
+    </div>
+    <p style="font-size:0.7rem;color:var(--text-muted);margin-top:0.8rem;font-weight:300">✓ Authentic product &nbsp;·&nbsp; ✓ Secure checkout &nbsp;·&nbsp; ✓ Returns accepted</p>
+  `;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* NOTIFICATION */
+let notifTimer;
+function notify(msg){
+  const el = document.getElementById('notif');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(notifTimer);
+  notifTimer = setTimeout(()=>el.classList.remove('show'), 2500);
+}
+
+/* CONTACT FORM */
+function handleContactForm(e){
+  e.preventDefault();
+  notify('Message sent! We\'ll contact you soon.');
+  e.target.reset();
+}
+
+/* APPLY CONFIG LINKS */
+function applyConfig(){
+  const links = {
+    'wa-btn':CONFIG.whatsapp,'fb-btn':CONFIG.facebook,'ig-btn':CONFIG.instagram,'ms-btn':CONFIG.messenger,
+    'float-wa':CONFIG.whatsapp,'float-fb':CONFIG.facebook,'float-ig':CONFIG.instagram,'float-ms':CONFIG.messenger,
+    'footer-wa':CONFIG.whatsapp,'footer-fb':CONFIG.facebook,'footer-ig':CONFIG.instagram,
+  };
+  Object.entries(links).forEach(([id,url])=>{
+    const el = document.getElementById(id);
+    if(el) el.href = url;
+  });
+}
+applyConfig();
+
+/* LOADER */
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('loader').classList.add('done'), 1200);
+});
+</script>
+</body>
+</html>
